@@ -5,7 +5,7 @@
 ## Introduction
 This project focuses on sentiment analysis of tweets related to US airlines. The dataset used for this analysis is the [Twitter US Airline Sentiment dataset](https://www.kaggle.com/datasets/crowdflower/twitter-airline-sentiment) from Kaggle. The goal is to classify tweets as either positive or negative sentiment.
 
-[View Notebook](./notebooks/sentiment_analysis.ipynb)
+[View Notebook](https://github.com/JacobJ215/Airline-Sentiment-Analysis/blob/main/notebooks/sentiment_analysis.ipynb)
 
 ## Libraries Used
 The project utilizes various Python libraries including:
