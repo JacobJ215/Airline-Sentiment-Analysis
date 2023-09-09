@@ -87,6 +87,18 @@ The models are evaluated using metrics such as accuracy, ROC curve, and confusio
 ### Tokenization and Embedding
 The text data is tokenized and sequences are created. Word embeddings using Word2Vec are performed.
 
+Tokenization is a crucial step in natural language processing (NLP) tasks. It involves breaking down text into individual words or tokens. These tokens serve as the basic units of analysis for the subsequent steps in the NLP pipeline.
+
+Once tokenized, these individual words need to be converted into a format suitable for input into a neural network. This is where embeddings come into play. Embeddings are vector representations of words that capture semantic relationships. In other words, they represent words in a continuous vector space, where similar words are located closer to each other.
+
+One popular technique for generating word embeddings is Word2Vec. Word2Vec is a shallow neural network model trained to reconstruct linguistic contexts of words. It learns to map words to a high-dimensional vector space in such a way that words with similar contexts are closer to each other in the vector space.
+
+Word2Vec can be thought of as a form of unsupervised learning for NLP. It learns to predict the probability of a word occurring in a context given the current word. This is done through two types of models: Continuous Bag of Words (CBOW) and Skip-gram. CBOW predicts the current word based on its context, while Skip-gram predicts the context based on the current word.
+
+In our project, Word2Vec is employed to generate word embeddings for the tweets. These embeddings capture the semantic relationships between words in the dataset. This enables the LSTM model to understand the contextual meaning of words in the tweets, which is crucial for accurate sentiment analysis.
+
+The embeddings are then used as the initial layer in our LSTM model. During training, the weights of this embedding layer are fine-tuned along with the rest of the network to optimize performance on the sentiment classification task. This allows the model to adapt the embeddings to the specific characteristics of the dataset and the sentiment analysis task at hand.
+
 ### LSTM Model
 A deep learning model is defined with embedding layers and LSTM units for sentiment analysis. The model is compiled and one-hot encoding is applied to the labels.
 
@@ -139,3 +151,17 @@ As with both the loss and the accuracy training and testing auc scores begin to 
 - "united brother luggage lost copa airline flight 635 competing sunday 2015 panamerican cross country cup please help"
 - "usairways work hard making sure thing flow smoothly keeping positive"
 
+
+## Conclusion
+
+In this sentiment analysis project, we set out to classify tweets related to US airlines as either positive or negative. Two approaches were explored: a classical machine learning approach using Random Forest and XGBoost, and a deep learning approach employing LSTM.
+
+After extensive preprocessing and exploratory data analysis, both models were trained and evaluated. The classical machine learning models achieved impressive results with an accuracy of 90.50%. The XGBoost model was further fine-tuned through hyperparameter tuning, leading to a marginal improvement in accuracy.
+
+The deep learning LSTM model, on the other hand, demonstrated its potential, achieving an AUC score of 0.9462, surpassing the optimized XGBoost's AUC of 0.9404. Despite the slight decrease in accuracy compared to the classical ML models, the LSTM's superior AUC score indicates its strength in distinguishing between positive and negative sentiments.
+
+The choice of AUC as the final metric was deliberate. It is particularly useful in cases where class imbalance is present, as in our dataset where negative sentiments were more prevalent. AUC provides a more comprehensive evaluation of the model's performance across different thresholds, making it a reliable metric for imbalanced datasets.
+
+Taking all factors into consideration, the LSTM model is ultimately chosen for its superior AUC score, indicating its efficacy in distinguishing between sentiments. The trade-off in accuracy is acceptable given the importance of correctly identifying negative sentiments in this context.
+
+This project demonstrates the versatility of machine learning and deep learning techniques in sentiment analysis and underscores the significance of selecting appropriate evaluation metrics based on the specific characteristics of the dataset.
