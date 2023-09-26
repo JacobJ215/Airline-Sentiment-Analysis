@@ -114,6 +114,14 @@ The best model is loaded and evaluated on the test set. Predictions are made, an
 * Accuracy - Best LSTM: 87.63%
 * AUC - Best LSTM: 0.9462
 
+**Confusion Matrix**
+
+![](./images/lsmt_conf_matrix.png)
+
+**ROC AUC Curve**
+
+![](./images/lstm_roc_auc.png)
+
 **Loss and Metric Plots (50 epochs)**
 
 **Training vs Testing Loss**
